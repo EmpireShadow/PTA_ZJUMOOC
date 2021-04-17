@@ -3,12 +3,14 @@
 记录mooc上浙江大学数据结构课程学习的作业
 
 
-
+### 一
 1.1 最大子列和
 
 1.2 Maximum Subsequence Sum
 
 1.3 二分查找
+
+### 二
 
 2.1 两个有序链表序列的合并
 
@@ -18,11 +20,15 @@
 
 2.4 Pop Sequence
 
+### 三
+
 3.1 树的同构
 
 3.2 List Leaves
 
 3.3 Tree Traversals Again
+
+### 四
 
 4.1 是否同一棵二叉搜索树 
 
@@ -32,11 +38,15 @@
 
 4.4 二叉搜索树的操作集 
 
+### 五
+
 5.1 堆中的路径 
 
 5.2 File Transfer
 
 5.3 Huffman Codes
+
+### 六
 
 6.1 列出连通集
 
@@ -45,6 +55,8 @@
 6.3 六度空间 
 
 6.n Forwards on Weibo
+
+### 七
 
 7.1 哈利·波特的考试 
 
