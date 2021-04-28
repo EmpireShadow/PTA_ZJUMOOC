@@ -69,6 +69,6 @@ void SixDegree_BFS(graph g,int start){
             }
         }
     }
-    float percent=100*visitnum/g.vertexnum;
+    float percent=100.0*visitnum/g.vertexnum;
     printf("%d: %.2f\%\n",start+1,percent);
 }
