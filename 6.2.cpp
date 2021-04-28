@@ -2,33 +2,26 @@
 using namespace std;
 
 int flag=0;
-int visited[101][101];
-int lake[101][101];
 
 void getout(int x,int y);
 int distance(int i,int j,int m,int n);
-void DFS(int i,int j,int d);
+void DFS(int (*crocodile)[3],int i,int n,int d);
 
 int main(){
     //初始化，录入
     int n,d;
     cin>>n>>d;
-    for(int i=0;i<101;i++)
-        for(int j=0;j<101;j++){
-            visited[i][j]=0;
-            lake[i][j]=0;
-        }
+    int crocodile[n][3];
     for(int i=0;i<n;i++){
-        int x,y;
-        cin>>x>>y;
-        lake[x+50][y+50]=1;
+        cin>>crocodile[i][0]>>crocodile[i][1];
+        crocodile[i][2]=0;
     }
     //开始深度遍历
-    for(int i=0;i<101;i++){
-        for(int j=0;j<101;j++){
-            if(lake[i][j]==1&&visited[i][j]==0&&distance(i,j,50,50)<=(7.5+d)*(7.5+d))
-                DFS(i,j,d);
-        }
+    for(int i=0;i<n;i++){
+        int x=crocodile[i][0];
+        int y=crocodile[i][1];
+        if(crocodile[i][2]==0&&distance(x,y,0,0)<=(7.5+d)*(7.5+d))
+                DFS(crocodile,i,n,d);
     }
     if(flag==1) cout<<"Yes";
     else cout<<"No";
@@ -39,19 +32,20 @@ int distance(int i,int j,int m,int n){
 }
 
 void getout(int x,int y,int d){
-    if(x>50) x=100-x;
-    if(y>50) y=100-y;
-    if((x-d<=0)||(y-d)<=0) flag=1;
+    if(x<0) x=-x;
+    if(y<0) y=-y;
+    if((x+d>=50)||(y+d)>=50) flag=1;
 }
 
-void DFS(int i,int j,int d){
-    visited[i][j]=1;
-    getout(i,j,d);
-    for(int m=0;m<101;m++){
-        for(int n=0;n<101;n++){
-            if(distance(i,j,m,n)<=distance(0,0,d,0)&&visited[m][n]==0&&lake[m][n]==1){
-                DFS(m,n,d);
-            }
-        }
+void DFS(int (*crocodile)[3],int i,int n,int d){
+    crocodile[i][2]=1;
+    int x=crocodile[i][0];
+    int y=crocodile[i][1];
+    getout(x,y,d);
+    for(int m=0;m<n;m++){
+        int q=crocodile[m][0];
+        int p=crocodile[m][1];
+        if(distance(x,y,q,p)<=d*d&&crocodile[m][2]==0)
+            DFS(crocodile,m,n,d);
     }
 }
