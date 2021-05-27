@@ -108,8 +108,8 @@ void scanandoutput(Book B){
             }
             else if(ptr->callnum==maxcnt){
                 pcnt++;
-                if(minphone<ptr->mobile){
-                    ptr->mobile=minphone;
+                if(minphone>ptr->mobile){
+                    minphone=ptr->mobile;
                 }
             }
             ptr=ptr->next;
