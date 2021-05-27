@@ -89,3 +89,21 @@
 9.2 Insert or Merge
 
 9.3 Insertion or Heap Sort 
+
+### 十
+
+10.1 统计工龄
+
+10.2 PAT Judge
+
+10.3 Sort with Swap(0, i) 
+
+### 十一
+
+11.1 电话聊天狂人
+
+11.2 Hashing
+
+11.3 QQ帐户的申请与登陆
+
+11.4 Hashing
